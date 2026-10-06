@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="Maite - Mis XV Años" />
+    <meta property="og:description"
+        content="¡La cuenta regresiva ha comenzado! Descubre los detalles y confirma tu asistencia." />
+
+    <meta property="og:image"
+        content="https://lunofest.github.io/15Maite071126/assets/imagenes/miniatura.png" />
+    <meta property="og:url" content="https://lunofest.github.io/15Maite071126/" />
+    <meta property="og:type" content="website" />
+
+    <meta property="og:image:type" content="image/png" />
+
+    <title>Mis 15 años</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+
+<!-- Usa metodologia bem, solo giones bajos __ nada de giones medios ni para los modificadore asi - o asi --, ****solo en la hoja de estilos se permiten giiones medios*****
+ respeta la semantica correcta -->
+
+<body>
+
+    <div class="intro" id="intro" >
+        <p class="intro__title" id="derecha">MIS XV MAITE</p>
+        <p class="intro__text" id="izquierda">QUIERO QUE SEAS PARTE DE ESTE MOMENTO TAN IMPORTANTE PARA MÍ</p>
+        <button class="intro__button" type="button" id="abajo">INGRESAR</button>
+    </div>
+
+    <header class="header">
+        <h1 id="arriba" class="header__title">It´s <br>time<br>to <br> party!</h1>
+    </header>
+
+    <button class="header__music" type="button" data_state="playing" aria-label="Pausar música">
+        <svg class="header__music_icon header__music_icon_pause" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="6" y="4" width="4" height="16"></rect>
+            <rect x="14" y="4" width="4" height="16"></rect>
+        </svg>
+        <svg class="header__music_icon header__music_icon_play" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 5v14l11-7z"></path>
+        </svg>
+    </button>
+
+    <main>
+
+        <section id="abajo" class="temporizador" aria-label="Cuenta regresiva">
+            <div class="temporizador__fila">
+                <div class="temporizador__item">
+                    <p class="temporizador__valor temporizador__dias">00</p>
+                    <p class="temporizador__etiqueta">Días</p>
+                </div>
+                <div class="temporizador__item">
+                    <p class="temporizador__valor temporizador__horas">00</p>
+                    <p class="temporizador__etiqueta">Horas</p>
+                </div>
+                <div class="temporizador__item">
+                    <p class="temporizador__valor temporizador__minutos">00</p>
+                    <p class="temporizador__etiqueta">Minutos</p>
+                </div>
+                <div class="temporizador__item">
+                    <p class="temporizador__valor temporizador__segundos">00</p>
+                    <p class="temporizador__etiqueta">Segundos</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="abajo" class="cuando">
+            <img class="section__icono" src="assets/iconos/calendario.gif" alt="">
+            <h2 class="cuando__titulo">¿CUÁNDO?</h2>
+            <p class="cuando__fecha">7 DE NOVIEMBRE 2026</p>
+            <p class="cuando__hora">| 21:00 HS |</p>
+        </section>
+
+        <section id="abajo" class="donde">
+            <img class="section__icono" src="assets/iconos/esfera.gif" alt="">
+            <h2 class="donde__titulo">¿DÓNDE?</h2>
+            <p class="donde__lugar">La Paloma Casona Zapiola</p>
+
+            <p class="donde__lugar donde__lugar_direccion">Zapiola 428, Bahía Blanca</p>
+            <a class="donde__boton" href="https://maps.app.goo.gl/T3A89wtu7Vtr1qDE8">COMO LLEGAR</a>
+        </section>
+
+        <section id="abajo" class="nombre">
+            <h2 class="nombre__texto">MIS <span class="nombre__destacado">XV</span> <br> MAITE</h2>
+        </section>
+
+        <section id="abajo" class="album">
+            <img class="section__icono" src="assets/iconos/camara.gif" alt="">
+            <h2 class="album__titulo">QUIERO VER TUS FOTOS</h2>
+            <p class="album__texto">PUEDEN SUBIR TODAS SUS FOTOS DEL EVENTO A MI ÁLBUM COMPARTIDO</p>
+            <a class="album__boton" href="https://photos.app.goo.gl/4UtrGrnrf4HER3DP8">IR AL ÁLBUM</a>
+        </section>
+
+        <section id="abajo" class="invitacion">
+            <hr class="invitacion__linea">
+            <h2 class="invitacion__texto">TE INVITO A FESTEJAR ESTA NOCHE <br> <span
+                    class="invitacion__destacado">¡INVOLVIDABLE!</span></h2>
+            <hr class="invitacion__linea">
+        </section>
+
+        <section id="abajo" class="dresscode">
+            <img class="section__icono section__icono2" src="assets/iconos/dresscode.gif" alt="">
+            <h2 class="dresscode__titulo">DRESS CODE</h2>
+            <p class="dresscode__estilo">ELEGANTE SPORT</p>
+            <hr class="dresscode__linea">
+            <p class="dresscode__nota">LOS COLORES CLAROS SE RESERVA PARA LA QUINCEAÑERA</p>
+        </section>
+
+        <section class="confirmacion">
+            <img class="section__icono" src="assets/iconos/confirmacion.gif" alt="">
+            <h2 class="confirmacion__titulo">CONFIRMÁ TU ASISTENCIA</h2>
+            <p class="confirmacion__limite">ANTES DEL 23 DE OCTUBRE 2026</p>
+            <label class="confirmacion__etiqueta" for="cantidad">NÚMERO DE PERSONAS A CONFIRMAR</label>
+            <div class="confirmacion__cantidad confirmacion__cantidad_desplegable">
+                <select class="confirmacion__numero" id="cantidad">
+                    <option value="1">1 Persona</option>
+                    <option value="2">2 Personas</option>
+                    <option value="3">3 Personas</option>
+                    <option value="4">4 Personas</option>
+                    <option value="5">5 Personas</option>
+                    <option value="6">6 Personas</option>
+                    <option value="7">7 Personas</option>
+                </select>
+            </div>
+            <div class="confirmacion__lista"></div>
+            <button class="confirmacion__enviar" type="button">CONFIRMAR ASISTENCIA</button>
+        </section>
+
+        <section id="abajo" class="regalos">
+            <img class="section__icono" src="assets/iconos/regalos.gif" alt="">
+            <h2 class="regalos__titulo">REGALOS</h2>
+            <p class="regalos__parrafo">Nada es más importante que tu presencia, pero si deseas hacerme un presente
+                puedes depositarlo en la siguiente cuenta:</p>
+            <button class="regalos__button" type="button" aria-expanded="false" aria-controls="datos">VER DATOS</button>
+            <div class="regalos__desplegable" id="datos">
+                <div class="regalos__dato">
+                    <h3 class="regalos__etiqueta">Titular: Maite Gismondi Lusarreta <br>Mercado Pago <br> </h3>
+                    <h3 class="regalos__etiqueta">Alias</h3>
+                    <p class="regalos__valor">maitegismondi</p>
+                    <button class="regalos__copiar" type="button">Toca para copiar alias</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="abajo" class="final">
+            <h2 class="final__texto">TE ESPERO</h2>
+        </section>
+
+
+
+    </main>
+
+
+    <footer>
+
+        <footer class="footer__final1">
+            <div class="footer__inner1">
+                <div class="footer__brand1">
+                    <p class="footer__text1">
+                        Página creada por <strong>Luno Digitales</strong>
+                        para los 15 años de <strong>Maite </strong>.<br>
+                        Todos los derechos reservados. <br>Visítano en:
+                    </p>
+
+                </div>
+
+
+                <a class="footer__site1" href="https://www.luno.net.ar" target="_blank"
+                    rel="noopener">www.luno.net.ar</a>
+                <div class="footer__social3">
+                    <p class="footer__follow1">Síguenos en nuestras redes</p>
+                    <a class="icon-link1"
+                        href="https://www.instagram.com/lunodigitales?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        aria-label="Instagram de Luno Digitales">
+                        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+                            <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"
+                                fill="none" />
+                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5" fill="none" />
+                            <circle cx="18.2" cy="5.8" r="0.7" fill="currentColor" />
+                        </svg>
+                    </a>
+                    <a class="icon-link1" href="https://www.facebook.com/profile.php?id=61581720891655" target="_blank"
+                        rel="noopener" aria-label="Facebook de Luno Digitales">
+                        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+        </footer>
+
+        <style>
+            /* ///////////////// footer /////////////////////// */
+
+
+            .footer__final1 {
+                background: linear-gradient(180deg, #ad9583 0%, #7e6754 100%);
+                color: #ffffff;
+                padding: 1.5em 0;
+
+                font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+                font-size: 14px;
+                width: clamp(100px, 100%, 1800px);
+                text-align: center;
+                margin: 7em auto 0;
+            }
+
+            .footer__inner1 {
+                max-width: 1100px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+                align-items: center;
+                text-align: center;
+                padding: 0 1em;
+            }
+
+            .footer__text1 {
+                margin: 0;
+                line-height: 1.4;
+            }
+
+            .footer__text1 strong {
+                color: #ffffff;
+                font-weight: 700;
+            }
+
+            .footer__site1 {
+                display: inline-block;
+                margin-top: 8px;
+                text-decoration: none;
+                color: #ffffff;
+                font-weight: 600;
+                text-align: center;
+                font-size: 1.1rem;
+            }
+
+            .footer__site1:hover {
+                text-decoration: underline;
+            }
+
+            .footer__social3 {
+                display: flex;
+                flex-direction: row;
+                gap: 15px;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 5px;
+            }
+
+            .footer__follow1 {
+                margin: 0;
+                font-size: 14px;
+                color: #ffffff;
+                font-weight: 500;
+            }
+
+            .footer__final1 .icon-link1 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                text-decoration: none;
+                color: #ffffff;
+                background: rgba(255, 255, 255, 0.2);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                transition: all 0.3s ease;
+            }
+
+            .footer__final1 .icon-link1 svg {
+                width: 28px !important;
+                height: 28px !important;
+                display: block;
+                margin: 0;
+            }
+
+            .footer__final1 .icon-link1:hover {
+                transform: translateY(-3px);
+                background: rgba(255, 255, 255, 0.4);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+
+
+    </footer>
+
+
+
+
+
+
+    <audio class="music" src="assets/musica.mp3" loop></audio>
+
+    <script src="js/script.js"></script>
+    <script src="js/animaciones.js"></script>
+
+</body>
+
+</html>

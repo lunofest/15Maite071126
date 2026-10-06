@@ -1,0 +1,819 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+:root {
+    --font-montserrat: "Montserrat", sans-serif;
+}
+
+/* ------ intro -------------- */
+
+.intro {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    text-align: center;
+    background: #ffffff;
+}
+
+.intro__title {
+    margin: 0;
+    color: #b7a8a3;
+    font-family: var(--font-montserrat);
+    font-weight: 300;
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    letter-spacing: 0.1em;
+}
+
+.intro__text {
+    margin: 0;
+    max-width: 30ch;
+    color: #a89f9b;
+    font-family: var(--font-montserrat);
+    font-weight: 400;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    text-transform: uppercase;
+    line-height: 1.6;
+}
+
+.intro__button {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 4px;
+    background: #bcaba6;
+    color: #ffffff;
+    font-family: var(--font-montserrat);
+    font-weight: 700;
+    font-size: clamp(1rem, 4vw, 1.4rem);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* ------ header -------------- */
+
+.header {
+    position: relative;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url("../assets/imagenes/brillos.webp") center center / cover no-repeat;
+    padding: 1rem;
+    z-index: -1;
+}
+
+.header__title {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 500px;
+    color: #ffffff;
+    font-family: var(--font-montserrat);
+    font-weight: 700;
+    font-size: 5rem;
+    line-height: 1.8;
+}
+
+.header__music {
+    position: fixed;
+    right: 1em;
+    bottom: 4.5em;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(251, 230, 201, 0.623);
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+}
+
+.header__music_arriba {
+    top: 2rem;
+    bottom: auto;
+}
+
+.header__music_icon {
+    width: 2em;
+    height: 2em;
+    fill: currentColor;
+}
+
+.header__music[data_state="playing"] .header__music_icon_play,
+.header__music[data_state="paused"] .header__music_icon_pause {
+    display: none;
+}
+
+/* ------ temporizador -------------- */
+
+.temporizador {
+    padding: 1rem;
+    margin-top: -3em;
+    z-index: 1;
+    margin-bottom: 4em;
+}
+
+.temporizador__fila {
+    display: flex;
+    gap: .5em;
+    max-width: 35rem;
+    margin: 0 auto;
+}
+
+.temporizador__item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    aspect-ratio: 1 / 1;
+    padding: 0.5rem;
+    border: 1px solid #bcaca8;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 6px 16px rgba(124, 104, 98, 0.15);
+    text-align: center;
+}
+
+.temporizador__valor {
+    margin: 0;
+    color: #9b8b86;
+    font-family: var(--font-montserrat);
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+.temporizador__etiqueta {
+    margin: 0;
+    color: #b7a8a3;
+    font-family: var(--font-montserrat);
+    font-weight: 400;
+    font-size: clamp(0.45rem, 1.8vw, 0.7rem);
+    text-transform: uppercase;
+}
+
+/* ------ cuando-------------- */
+
+.cuando {
+    min-height: 60dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.92);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.111), rgba(0, 0, 0, 0.127), rgba(0, 0, 0, 0.094)), url("../assets/imagenes/brillos.webp") center center / cover no-repeat;
+}
+
+.section__icono {
+    width: 5rem;
+}
+
+.cuando__titulo {
+    margin: 0;
+    font-family: var(--font-montserrat);
+    font-weight: 300;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.cuando__fecha {
+    margin: 0;
+    font-family: var(--font-montserrat);
+    font-weight: 400;
+    font-size: clamp(1.1rem, 4vw, 1.6rem);
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.cuando__hora {
+    margin: 0;
+    font-family: var(--font-montserrat);
+    font-weight: 300;
+    font-size: clamp(1rem, 3.5vw, 1.4rem);
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ------ donde -------------- */
+
+.donde {
+    min-height: 60dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: #4a4a4a;
+}
+
+.donde__titulo {
+    margin: 0;
+    font-family: var(--font-montserrat);
+    font-weight: 300;
+    font-size: clamp(1.75rem, 7vw, 2.75rem);
+    letter-spacing: 0.05em;
+}
+
+.donde__lugar {
+    margin: 0;
+    font-family: var(--font-montserrat);
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.donde__lugar_direccion {
+    font-size: .85rem;
+    font-weight: 400;
+}
+
+.donde__boton {
+    display: inline-block;
+    padding: 0.9rem 2.5rem;
+    border: 1px solid #4a4a4a;
+    border-radius: 4px;
+    background: transparent;
+    color: #4a4a4a;
+    font-family: var(--font-montserrat);
+    font-weight: 400;
+    font-size: clamp(0.85rem, 3vw, 1rem);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.donde__boton:hover {
+    background: #4a4a4a;
+    color: #ffffff;
+}
+
+/* ------ nombre -------------- */
+
+.nombre {
+    min-height: 30dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    background: url("../assets/imagenes/brillos.webp") center center / cover no-repeat;
+    margin: 5em auto;
+}
+
+.nombre__texto {
+    margin: 0;
+    color: #ffffff;
+    font-family: var(--font-montserrat);
+    font-weight: 300;
+    font-size: clamp(2.5rem, 12vw, 5rem);
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+}
+
+.nombre__destacado {
+    font-weight: 800;
+}
+
+
+/* ------ album-------------- */
+
+.album {
+    min-height: 60dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: #4a4a4a;
+}
+
+.album__titulo {
+    margin: 0;
+    font-family: var(--font-montserrat);
+    font-weight: 400;
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    letter-spacing: 0.05em;
+}
+
+.album__texto {
+    margin: 0;
+    max-width: 30ch;
+    font-family: var(--font-montserrat);
+    font-weight: 400;
+    font-size: clamp(1rem, 4vw, 1.4rem);
+    line-height: 1.5;
+}
+
+.album__boton {
+    display: inline-block;
+    padding: 0.9rem 2.5rem;
+    border: 1px solid #4a4a4a;
+    border-radius: 4px;
+    background: #4a4a4a;
+    color: #ffffff;
+    font-family: var(--font-montserrat);
+    font-weight: 400;
+    font-size: clamp(0.85rem, 3vw, 1rem);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.album__boton:hover {
+    background: transparent;
+    color: #4a4a4a;
+}
+
+/* ------ invitacion -------------- */
+
+.invitacion {
+    min-height: 60dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: #ffffff;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.111), rgba(0, 0, 0, 0.127), rgba(0, 0, 0, 0.094)), url("../assets/imagenes/brillos.webp") center center / cover no-repeat;
+    margin: 5em auto;
+}
+
+.invitacion__linea {
+    width: 60%;
+    max-width: 22rem;
+    height: 2px;
+    margin: 0;
+    border: none;
+    background: #ffffff;
+}
+
+.invitacion__texto {
+    margin: 0;
+    max-width: 14ch;
+    font-family: var(--font-montserrat);
+    font-weight: 300;
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(0, 0, 0, 0.25);
+
+}
+
+.invitacion__destacado {
+    font-weight: 800;
+}
+
+
+/* ------ dresscode-------------- */
+
+.dresscode {
+    min-height: 60dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: #4a4a4a;
+    margin: 5em auto;
+}
+
+.section__icono2 {
+    opacity: .7;
+}
+
+.dresscode__titulo {
+    margin: 0;
+    font-family: var(--font-montserrat);
+    font-weight: 400;
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    letter-spacing: 0.05em;
+}
+
+.dresscode__estilo {
+    margin: 0;
+    font-family: var(--font-montserrat);
+    font-weight: 400;
+    font-size: clamp(1rem, 4vw, 1.4rem);
+}
+
+.dresscode__linea {
+    width: 6rem;
+    height: 1px;
+    margin: 0;
+    border: none;
+    background: #4a4a4a;
+}
+
+.dresscode__nota {
+    margin: 0;
+    max-width: 30ch;
+    font-family: var(--font-montserrat);
+    font-weight: 400;
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+    line-height: 1.5;
+}
+
+
+/* ------ regalos-------------- */
+
+.regalos {
+    min-height: 60dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: #4a4a4a;
+    margin: 5em auto;
+}
+
+.regalos__titulo {
+    margin: 0;
+    font-family: var(--font-montserrat);
+    font-weight: 400;
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    letter-spacing: 0.05em;
+}
+
+.regalos__parrafo {
+    margin: 0;
+    max-width: 32ch;
+    font-family: var(--font-montserrat);
+    font-weight: 400;
+    font-size: clamp(1rem, 4vw, 1.3rem);
+    line-height: 1.5;
+}
+
+.regalos__button {
+    padding: 0.9rem 2.5rem;
+    border: 1px solid #4a4a4a;
+    border-radius: 4px;
+    background: transparent;
+    color: #4a4a4a;
+    font-family: var(--font-montserrat);
+    font-weight: 400;
+    font-size: clamp(0.85rem, 3vw, 1rem);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.regalos__button:hover {
+    background: #4a4a4a;
+    color: #ffffff;
+}
+
+.regalos__desplegable {
+    display: none;
+}
+
+.regalos__desplegable_abierto {
+    display: block;
+}
+
+.regalos__dato {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.regalos__etiqueta {
+    margin: 0;
+    font-family: var(--font-montserrat);
+    font-weight: 400;
+    font-size: clamp(0.85rem, 3vw, 1rem);
+    text-transform: uppercase;
+}
+
+.regalos__valor {
+    margin: 0;
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+}
+
+.regalos__copiar {
+    padding: 0.6rem 1.5rem;
+    border: 1px solid #4a4a4a;
+    border-radius: 4px;
+    background: transparent;
+    color: #4a4a4a;
+    font-family: var(--font-montserrat);
+    font-weight: 400;
+    font-size: clamp(0.8rem, 3vw, 0.95rem);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.regalos__copiar:hover {
+    background: #4a4a4a;
+    color: #ffffff;
+}
+
+
+/* ------ confirmacion-------------- */
+
+.confirmacion {
+    min-height: 60dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 3rem 1rem;
+    text-align: center;
+    color: #ffffff;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.111), rgba(0, 0, 0, 0.23), rgba(0, 0, 0, 0.094)), url("../assets/imagenes/brillos.webp") center center / cover no-repeat;
+}
+
+.confirmacion__titulo {
+    margin: 0;
+    font-family: var(--font-montserrat);
+    font-weight: 300;
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.confirmacion__limite {
+    margin: 0;
+    font-family: var(--font-montserrat);
+    font-weight: 400;
+    font-size: 0.8rem;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+    background-color: #483934;
+    padding: .5em;
+    border-radius: .5em;
+}
+
+.confirmacion__etiqueta {
+    font-family: var(--font-montserrat);
+    font-weight: 700;
+    font-size: clamp(0.8rem, 4vw, 1.1rem);
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.confirmacion__cantidad {
+    width: 100%;
+    max-width: 28rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    background-color: rgb(73, 56, 47);
+    padding: .5em;
+}
+
+.confirmacion__cantidad_desplegable {
+    position: relative;
+}
+
+.confirmacion__cantidad_desplegable::after {
+    content: "▼";
+    position: absolute;
+    right: 0.25rem;
+    bottom: 0.9rem;
+    color: #ffffff;
+    font-size: 0.6rem;
+    pointer-events: none;
+}
+
+.confirmacion__lista {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 100%;
+    max-width: 28rem;
+}
+
+.confirmacion__invitado {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.confirmacion__invitado_titulo {
+    margin: 0;
+    font-family: var(--font-montserrat);
+    font-weight: 700;
+    font-size: clamp(0.8rem, 4vw, 1.1rem);
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.confirmacion__tarjeta {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.316);
+    text-align: left;
+    backdrop-filter: blur(6px);
+}
+
+.confirmacion__campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.confirmacion__campo_texto {
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+    font-size: clamp(0.6rem, 3vw, 0.75rem);
+}
+
+.confirmacion__nombre,
+.confirmacion__alimentacion,
+.confirmacion__cancion,
+.confirmacion__deseos,
+.confirmacion__numero {
+    width: 100%;
+    padding: 0.4rem 0;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    background: transparent;
+    color: #ffffff;
+    font-family: var(--font-montserrat);
+    font-size: 0.8rem;
+}
+
+.confirmacion__nombre:focus,
+.confirmacion__alimentacion:focus,
+.confirmacion__cancion:focus,
+.confirmacion__deseos:focus,
+.confirmacion__numero:focus {
+    outline: none;
+    border-bottom-color: #ffffff;
+}
+
+.confirmacion__numero {
+    border-bottom: none;
+    font-size: clamp(0.8rem, 4vw, 1.1rem);
+    appearance: none;
+    padding-right: 1.5rem;
+    cursor: pointer;
+}
+
+.confirmacion__numero option {
+    color: #ffffff;
+}
+
+.confirmacion__alimentacion {
+    appearance: none;
+    padding-right: 1.5rem;
+}
+
+.confirmacion__alimentacion option {
+    color: #4a4a4a;
+}
+
+.confirmacion__campo_desplegable {
+    position: relative;
+}
+
+.confirmacion__campo_desplegable::after {
+    content: "▼";
+    position: absolute;
+    right: 0.25rem;
+    bottom: 0.6rem;
+    color: #ffffff;
+    font-size: 0.6rem;
+    pointer-events: none;
+}
+
+.confirmacion__asistencia {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.confirmacion__pildora {
+    flex: 1;
+    padding: 0.7rem 1rem;
+    border: 1px solid #ffffff;
+    border-radius: 999px;
+    background: transparent;
+    color: #ffffff;
+    font-family: var(--font-montserrat);
+    font-weight: 400;
+    font-size: clamp(0.6rem, 3vw, 0.75rem);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.confirmacion__pildora_activa {
+    background: #ffffff;
+    color: #4a4a4a;
+}
+
+.confirmacion__pildora.confirmacion__invalido {
+    border-color: #ff9a9a;
+    color: #ff9a9a;
+}
+
+.confirmacion__invalido {
+    border-bottom-color: #ff9a9a;
+}
+
+.confirmacion__enviar {
+    padding: 0.9rem 2.5rem;
+    border: none;
+    border-radius: 4px;
+    background: #ffffff;
+    color: #4a4a4a;
+    font-family: var(--font-montserrat);
+    font-weight: 700;
+    font-size: clamp(0.65rem, 3vw, 0.8rem);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.confirmacion__enviar:hover {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+
+/* ------ final-------------- */
+
+.final {
+    min-height: 30dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    background: url("../assets/imagenes/brillos.webp") center center / cover no-repeat;
+}
+
+.final__texto {
+    margin: 0;
+    color: #ffffff;
+    font-family: var(--font-montserrat);
+    font-weight: 300;
+    font-size: clamp(2rem, 10vw, 4rem);
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+}
+
+/* ------ animaciones -------------- */
+
+#izquierda,
+#derecha,
+#arriba,
+#abajo {
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#izquierda {
+    transform: translateX(-100px);
+}
+
+#derecha {
+    transform: translateX(100px);
+}
+
+#arriba {
+    transform: translateY(-100px);
+}
+
+#abajo {
+    transform: translateY(100px);
+}
+
+#izquierda.visible,
+#derecha.visible,
+#arriba.visible,
+#abajo.visible {
+    opacity: 1;
+    transform: none;
+}
